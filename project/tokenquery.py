@@ -49,7 +49,7 @@ for i in range(term_arr.shape[0]):
 
 #print dictionary
 print dictionary['data mining']
-query=raw_input("Enter your baadha\n")
+query=raw_input("Enter your query\n")
 
 query= query.lower()
 
@@ -174,9 +174,9 @@ for i in range(len(final_dependency)):
 	splitFinal = final_dependency[i].split(',')
 	if dictionary.get(splitFinal[1])!=None and dictionary.get(splitFinal[2])!=None:
 		if splitFinal[0] != 'conj':
-			penta = []
-			penta.append(splitFinal[1] + ',' + splitFinal[2])
-			GR.append(penta)
+			res = []
+			res.append(splitFinal[1] + ',' + splitFinal[2])
+			GR.append(res)
 
 	if dictionary.get(splitFinal[1])!=None or dictionary.get(splitFinal[2])!=None:
 		if splitFinal[0] == 'acl:relcl':
@@ -187,8 +187,8 @@ for i in range(len(final_dependency)):
 			object.append(splitFinal[2])
 
 for i in range(len(subject)):
-	potti=str(subject[i]+','+object[i])
-	GR.append(potti)	
+	p=str(subject[i]+','+object[i])
+	GR.append(p)	
 
 
 print CR
